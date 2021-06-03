@@ -36,8 +36,8 @@ jobs:
       - name: check version with shell
         shell: pwsh
         run: |
-          $VERSION = node -p "require('./package.json').version"
-          $VERSION
+          $version = node -p "require('./package.json').version"
+          $version
           echo "This is the version number bro"
           echo "VERSION=$version" > $GITHUB_ENV
           echo "${{ env.VERSION }}"
