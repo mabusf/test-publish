@@ -25,14 +25,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: check version with shell
+      - name: Fetching version from package.json
         shell: pwsh
         run: |
           $version = node -p "require('./package.json').version"
-          $version
-          echo "This is the version number bro"
           echo "VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-      - name: print env.VERSION
+      - name: Release version number
         run: |
           echo "${{ env.VERSION }}"
       - name: Create Release
@@ -41,11 +39,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token comes from package.json
         with:
-          tag_name: v${{env.VERSION}} # ${{ github.ref }}
+          tag_name: v${{env.VERSION}} 
           release_name: v${{env.VERSION}}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
           draft: true
           prerelease: false
