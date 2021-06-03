@@ -39,7 +39,7 @@ jobs:
           $VERSION = node -p "require('./package.json').version"
           $VERSION
           echo "This is the version number bro"
-          echo "VERSION=$version"
+          echo "VERSION=$version" > $GITHUB_ENV
           echo "{{ env.VERSION }}"
       - name: Create Release
         id: create_release
