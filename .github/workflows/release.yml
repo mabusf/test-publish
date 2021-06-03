@@ -41,6 +41,7 @@ jobs:
           echo "This is the version number bro"
           echo "VERSION=$version" > $GITHUB_ENV
           echo "${{ env.VERSION }}"
+          ${{ env.VERSION }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
