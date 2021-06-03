@@ -26,12 +26,12 @@ jobs:
       VERSION: 1.4.7
       
     steps:
-      - name: bla
-        if: ${{ env.VERSION == '1.4.7' }}
-        shell: pwsh
-        run: |
-          $vers = node -p "require('./package.json').version"
-          $vers
+#       - name: bla
+#         if: ${{ env.VERSION == '1.4.7' }}
+#         shell: pwsh
+#         run: |
+#           $vers = node -p "require('./package.json').version"
+#           $vers
 #       - name: Checkout code
 #         uses: actions/checkout@v2
       - name: check version with shell
