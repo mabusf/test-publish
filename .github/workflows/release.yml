@@ -33,7 +33,7 @@ jobs:
 #           $vers = node -p "require('./package.json').version"
 #           $vers
       - name: Checkout code
-#         uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: check version with shell
         shell: pwsh
         run: |
