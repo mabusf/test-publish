@@ -38,6 +38,7 @@ jobs:
         run: |
           $VERSION = node -p "require('./package.json').version"
           $VERSION
+          env.VERSION = $VERSION
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
