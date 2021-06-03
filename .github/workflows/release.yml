@@ -35,10 +35,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ steps.get_version.outputs.version }}
+          release_name: Release ${{ steps.release.outputs.release_id }}
           body: |
             Changes in this Release
-            - First Change
-            - Second Change
+            - Another change
           draft: false
           prerelease: false
+        - name: Print release output
+          if: ${{ steps.release.outputs.released == 'true' }}
+          run: echo Release ID ${{ steps.release.outputs.release_id }}
+
