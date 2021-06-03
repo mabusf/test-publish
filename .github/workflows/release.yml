@@ -29,15 +29,15 @@ jobs:
         shell: pwsh
         run: |
           $version = node -p "require('./package.json').version"
-          $version
+          env: VERSION = $version
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: node -p "require('./package.json').version"
-#           tag_name: v1.4.6 # ${{ github.ref }}
+#           tag_name: node -p "require('./package.json').version"
+          tag_name: salut # ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
             Changes in this Release
