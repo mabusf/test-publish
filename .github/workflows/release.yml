@@ -22,19 +22,21 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    env:
+      VERSION: 1.4.7
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: check version with shell
         shell: pwsh
         run: |
-          VERSION = node -p "require('./package.json').version"
-          VERSION
+          $VERSION = node -p "require('./package.json').version"
+          $VERSION
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ env.VERSION }} # This token is provided by Actions, you do not need to create your own token
         with:
 #           tag_name: node -p "require('./package.json').version"
           tag_name: salut # ${{ github.ref }}
