@@ -28,8 +28,8 @@ jobs:
       - name: check version with shell
         shell: pwsh
         run: |
-          $version = node -p "require('./package.json').version"
-          env: VERSION = $version
+          VERSION = node -p "require('./package.json').version"
+          VERSION
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
