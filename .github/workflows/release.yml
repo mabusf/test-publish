@@ -32,6 +32,8 @@ jobs:
           $version
           echo "This is the version number bro"
           echo "VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+      - name: print env.VERSION
+        run: |
           ${{ env.VERSION }}
       - name: Create Release
         id: create_release
