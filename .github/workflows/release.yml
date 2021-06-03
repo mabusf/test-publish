@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - auto-updater
 # jobs:
 #   release:
 #     name: Release
