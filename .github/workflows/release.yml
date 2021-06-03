@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VERSION: 1.4.7
-      
     steps:
 #       - name: bla
 #         if: ${{ env.VERSION == '1.4.7' }}
@@ -32,8 +31,8 @@ jobs:
 #         run: |
 #           $vers = node -p "require('./package.json').version"
 #           $vers
-#       - name: Checkout code
-#         uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: check version with shell
         shell: pwsh
         run: |
