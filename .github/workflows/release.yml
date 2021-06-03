@@ -1,4 +1,4 @@
-hname: Release npm package
+name: Release npm package
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
           $version
           echo "This is the version number bro"
           echo "VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-          echo "${{ env.VERSION }}"
+          ${{ env.VERSION }}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
