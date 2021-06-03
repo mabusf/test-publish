@@ -26,7 +26,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: check version with shell
-        run: echo $node -p "require('./package.json').version"
+        run: echo ${node -p "require('./package.json').version"}
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
