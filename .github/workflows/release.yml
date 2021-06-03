@@ -34,7 +34,7 @@ jobs:
           echo "VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
       - name: print env.VERSION
         run: |
-          ${{ env.VERSION }}
+          echo "${{ env.VERSION }}"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
