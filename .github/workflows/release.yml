@@ -27,7 +27,7 @@ jobs:
       
     steps:
       - name: bla
-        if: ${{ env.VERSION == 1.4.7 }}
+        if: ${{ env.VERSION == "1.4.7" }}
         run: echo "hello"
       - name: Checkout code
         uses: actions/checkout@v2
