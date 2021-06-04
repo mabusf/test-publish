@@ -21,7 +21,7 @@ on:
 jobs:
   build:
     name: Create Release
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -35,7 +35,7 @@ jobs:
           echo "${{ env.VERSION }}"
       - name : Getting commit hash
         run: |
-          echo "COMMIT_SHA=`ECHO ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+          echo "COMMIT_SHA=`ECHO ${GITHUB_SHA}`" | cut -c1-8 >> $GITHUB_ENV
       - name: Printing commit hash's 8 first characters
         run: |
           echo "The sha: "
