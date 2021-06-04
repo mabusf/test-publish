@@ -47,7 +47,7 @@ jobs:
           node-version: "12.x"
       - run: |
             mkdir test
-            ls -a
+            ls
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
