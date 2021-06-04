@@ -34,6 +34,9 @@ jobs:
       - name: Release version number
         run: |
           echo "${{ env.VERSION }}"
+      - name : Getting commit hash
+        run: |
+          echo "${{ GITHUB_SHA }}"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
