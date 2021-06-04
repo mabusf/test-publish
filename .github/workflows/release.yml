@@ -36,9 +36,9 @@ jobs:
       - name : Getting commit hash
         run: |
           echo "Deploying to production server on branch $GITHUB_SHA"
-          echo "$GITHUB_SHA" > $sha
+          echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
           echo "The sha: "
-          $sha
+          echo "${SHORT_SHA}"
 #          echo "COMMIT_SHA=$GITHUB_SHA" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
       - name: Create Release
         id: create_release
