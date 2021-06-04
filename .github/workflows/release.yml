@@ -42,7 +42,7 @@ jobs:
           echo "The sha: "
           echo "${{env.COMMIT_SHA}}"
       - name: navigating
-      - uses: actions/setup-node@v1
+        uses: actions/setup-node@v1
         with: 
           node-version: "12.x"
       - run: |
