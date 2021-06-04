@@ -37,7 +37,7 @@ jobs:
         run: |
           echo "${{ env.COMMIT_SHA }}"
           echo "Deploying to production server on branch $GITHUB_SHA"
-          echo "$COMMIT_SHA=$GITHUB_SHA" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+          echo "COMMIT_SHA=$GITHUB_SHA" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
