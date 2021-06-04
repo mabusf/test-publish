@@ -38,6 +38,8 @@ jobs:
           echo "Deploying to production server on branch $GITHUB_SHA"
           echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
           echo "The sha: "
+      - name: Printing commit hash
+        run: |
           echo "${{env.SHORT_SHA}}"
 #          echo "COMMIT_SHA=$GITHUB_SHA" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
       - name: Create Release
