@@ -35,18 +35,18 @@ jobs:
           echo "${{ env.VERSION }}"
       - name : Getting commit hash
         run: |
-          echo "SHORTENED_SHA=`ECHO ${GITHUB_SHA} | cut -c1-8` >> $GITHUB_ENV"
-      - name: Printing commit hash
+          echo "COMMIT_SHA=`ECHO ${GITHUB_SHA} | cut -c1-8` >> $GITHUB_ENV"
+      - name: Printing commit hash's 8 first characters
         run: |
           echo "The sha: "
-          echo "${{env.SHORT_SHA}}"
+          echo "${{env.COMMIT_SHA}}"
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token comes from package.json
         with:
-          tag_name: v${{env.VERSION}} - ${{env.SHORT_SHA}}
-          release_name: v${{env.VERSION}} - ${{env.SHORT_SHA}}
+          tag_name: v${{env.VERSION}} - ${{env.COMMIT_SHA}} # ex: v1.0.0-abcd1234
+          release_name: v${{env.VERSION}} - ${{env.COMMIT_SHA}} # same as tag_name
           draft: true
           prerelease: false
