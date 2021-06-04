@@ -61,3 +61,13 @@ jobs:
           release_name: v${{env.VERSION}}-${{env.COMMIT_SHA}} # same as tag_name
           draft: true
           prerelease: false
+      - name: navigating
+        uses: actions/setup-node@v1
+        with: 
+          node-version: "12.x"
+      - run: |
+            mkdir test
+            ls
+            cp index.js ./test
+            cd test
+            ls
