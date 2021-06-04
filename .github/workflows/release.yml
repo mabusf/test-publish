@@ -48,6 +48,7 @@ jobs:
       - run: |
             mkdir test
             ls
+            cp index.js ./test
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
