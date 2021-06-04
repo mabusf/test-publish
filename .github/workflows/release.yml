@@ -41,26 +41,6 @@ jobs:
         run: |
           echo "The sha: "
           echo "${{env.COMMIT_SHA}}"
-#       - name: navigating
-#         uses: actions/setup-node@v1
-#         with: 
-#           node-version: "12.x"
-#       - run: |
-#             mkdir test
-#             ls
-#             cp index.js ./test
-#             cd test
-#             ls
-      - name: Create Release
-        id: create_release
-      - uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token comes from package.json
-        with:
-          tag_name: v${{env.VERSION}}-${{env.COMMIT_SHA}} # ex: v1.0.0-abcd1234
-          release_name: v${{env.VERSION}}-${{env.COMMIT_SHA}} # same as tag_name
-          draft: true
-          prerelease: false
       - name: navigating
         uses: actions/setup-node@v1
         with: 
@@ -71,3 +51,13 @@ jobs:
             cp index.js ./test
             cd test
             ls
+      - name: Create Release
+        id: create_release
+      - uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token comes from package.json
+        with:
+          tag_name: v${{env.VERSION}}-${{env.COMMIT_SHA}} # ex: v1.0.0-abcd1234
+          release_name: v${{env.VERSION}}-${{env.COMMIT_SHA}} # same as tag_name
+          draft: true
+          prerelease: false
