@@ -35,7 +35,7 @@ jobs:
           echo "${{ env.VERSION }}"
       - name : Getting commit hash
         run: |
-          echo "${{GITHUB_SHA}}"
+          echo `${{GITHUB_SHA}}`
           echo "COMMIT_SHA=`echo ${{GITHUB_SHA}}` | cut -c1-8 >> $GITHUB_ENV"
       - name: Printing commit hash's 8 first characters
         run: |
