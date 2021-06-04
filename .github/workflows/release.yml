@@ -2,7 +2,6 @@ name: Release testing
 on:
   push:
     branches:
-      - master
       - auto-updater
 # jobs:
 #   release:
@@ -66,7 +65,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token comes from package.json
         with:
-          artifacts: "release.zip"
+          artifacts: "release.zip,/test"
           bodyFile: index.js
           tag_name: v${{env.VERSION}}-${{env.COMMIT_SHA}} # ex: v1.0.0-abcd1234
           release_name: v${{env.VERSION}}-${{env.COMMIT_SHA}} # same as tag_name
