@@ -25,6 +25,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: deleting index.js
+        shell: pwsh
+        run: |
+          rm index.js
       - name: Fetching version from package.json
         shell: pwsh
         run: |
