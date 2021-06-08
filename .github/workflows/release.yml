@@ -41,7 +41,8 @@ jobs:
         run: |
           echo "The sha: "
           echo "${{env.COMMIT_SHA}}"
-          rm index.js
+          mkdir bob
+          cp index.js bob
           dir
       - name: Create Release
         id: create_release
