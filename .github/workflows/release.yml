@@ -44,7 +44,6 @@ jobs:
           mkdir bob
           cp index.js bob
           Compress-Archive bob bob.zip
-          cd bob
       - name: Printing bob dir
         run: |
           dir
