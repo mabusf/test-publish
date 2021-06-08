@@ -43,6 +43,7 @@ jobs:
           echo "${{env.COMMIT_SHA}}"
           mkdir bob
           cp index.js bob
+          cd bob
           dir
       - name: Create Release
         id: create_release
