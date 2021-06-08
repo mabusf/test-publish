@@ -44,6 +44,8 @@ jobs:
           mkdir bob
           cp index.js bob
           cd bob
+      - name: Printing commit hash 8 first characters
+        run: |
           dir
       - name: Create Release
         id: create_release
