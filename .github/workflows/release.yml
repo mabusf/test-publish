@@ -43,8 +43,9 @@ jobs:
           echo "${{env.COMMIT_SHA}}"
           mkdir bob
           cp index.js bob
+          zip bob
           cd bob
-      - name: Printing commit hash 8 first characters
+      - name: Printing bob dir
         run: |
           dir
       - name: Create Release
