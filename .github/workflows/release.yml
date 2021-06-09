@@ -42,7 +42,7 @@ jobs:
           echo "The sha: "
           echo "${{env.COMMIT_SHA}}"
           mkdir bob
-          cp main.js bob
+          cp index.js bob
           Compress-Archive bob bob.zip
           Remove-Item -LiteralPath '.\\bob'
       - name: Printing bob dir
