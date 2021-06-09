@@ -44,6 +44,7 @@ jobs:
           mkdir bob
           cp main.js bob
           Compress-Archive bob bob.zip
+          Remove-Item -LiteralPath '.\\bob'
       - name: Printing bob dir
         run: |
           dir
